@@ -38,6 +38,8 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = [for (vnet, i) in
   }
 }]
 
+
+
 //Special Subnets
 var subnetRTOnly = [
   'GatewaySubnet'
@@ -123,6 +125,25 @@ module OtherSubnets 'modules/subnet-both.bicep' = [for (subnet, i) in subnetArra
     subnetName: subnet.subnetName
     subnetAddressPrefix: subnet.SubnetAddressSpace
     serviceEndPoints: subnet.serviceEndPoints
+  }
+  dependsOn: [
+    BstFwSubnets
+    OtherRouteTable
+    OtherNSGTable
+  ]
+}]
+
+// Add subnet delegation
+
+@batchSize(1)
+module AddDelegation 'modules/add-delegation.bicep' = [for (subnet, i) in subnetArray: if (!contains(specialSubnet, subnet.subnetName)) {
+  name: 'delegation-${subnet.vNetName}-${subnet.subnetName}-${i}'
+  params: {
+    rgVnet: resourceGroup().name
+    vNetName: subnet.vNetName
+    subnetName: subnet.subnetName
+    subnetAddressPrefix: subnet.SubnetAddressSpace
+    serviceDelegation: []
   }
   dependsOn: [
     BstFwSubnets

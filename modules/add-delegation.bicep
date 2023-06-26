@@ -1,19 +1,23 @@
 // ------------------------------------------------------------
-// Subnet with No NSG and Route Table - used for bastion and
-//  GatewaySubnet
+// Subnet with delegation
 // ------------------------------------------------------------
 param vNetName string
 param rgVnet string
 param subnetName string
 param subnetAddressPrefix string
-param serviceEndPoints array = []
+param serviceDelegation array = []
 
-//Subnet with RT and NSG
 resource subnet 'Microsoft.Network/virtualNetworks/subnets@2020-06-01' = {
   name: '${vNetName}/${subnetName}'
   properties: {
     addressPrefix: subnetAddressPrefix
-    serviceEndpoints: serviceEndPoints
-    
+    delegations: [
+      {
+        name: 'Microsoft.Web/serverfarms'
+        properties: {
+          serviceName: 'Microsoft.Web/serverfarms'
+        }
+      }
+    ]
   }
 }
