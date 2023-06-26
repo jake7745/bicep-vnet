@@ -1,0 +1,84 @@
+{
+    "$Schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "$contentVersion": "1.0.0.0",
+    "parameters": {
+      "vNetArray": {
+        "value": [
+          {
+            "vNetName": "vnet-test-uks-stg",
+            "vNetLocation": "CentralUS",
+            "NetworkType": "Spoke",
+            "vNetAddressSpace": "10.5.0.0/16",
+            "subnets": [
+              {
+                "vNetName": "vnet-test-uks-stg",
+                "subnetName": "snet-webapp-uks-stg",
+                "SubnetAddressSpace": "10.5.1.0/25",
+                "serviceEndpoints": [],
+                "securityRules": [],
+                "routes": []
+              },
+             {
+                "vNetName": "vnet-test-uks-stg",
+                "subnetName": "snet-agw-uks-stg",
+                "SubnetAddressSpace": "10.5.3.0/25",
+                "serviceEndpoints": [],
+                "securityRules": [],
+                "routes": []
+              },
+              {
+                "vNetName": "vnet-test-uks-stg",
+                "subnetName": "snet-sql-uks-stg",
+                "SubnetAddressSpace": "10.5.4.0/25",
+                "serviceEndpoints": [],
+                "securityRules": [],
+                "routes": []
+              }
+            ]
+          }
+        ]
+      },
+      "subnetArray": {
+        "value": [
+          {
+            "vNetName": "vnet-test-uks-stg",
+            "subnetName": "snet-webapp-uks-stg",
+            "SubnetAddressSpace": "10.5.1.0/25",
+            "serviceEndpoints": [],
+            "securityRules": [],
+            "routes": [],
+            "delegations":[
+              {
+                  "name": "Microsoft.Web.serverFarms",
+                  "properties": {
+                      "serviceName": "Microsoft.Web/serverFarms"
+                  }
+              } 
+          ]
+          },
+          {
+            "vNetName": "vnet-test-uks-stg",
+            "subnetName": "snet-agw-uks-stg",
+            "SubnetAddressSpace": "10.5.3.0/25",
+            "serviceEndpoints": [],
+            "securityRules": [],
+            "routes": [],
+            "delegations":[]            
+          },
+          {
+            "vNetName": "vnet-test-uks-stg",
+            "subnetName": "snet-sql-uks-stg",
+            "SubnetAddressSpace": "10.5.4.0/25",
+            "serviceEndpoints": [
+              {
+                "service": "Microsoft.sql"
+              }
+            ],
+            "securityRules": [],
+            "routes": [],
+            "delegations":[]            
+          }
+        ]
+      }
+    }
+  }

@@ -1,0 +1,370 @@
+{
+    "$Schema":  "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "$contentVersion":  "1.0.0.0",
+    "parameters":  {
+        "vNetArray":  {
+            "value":  [
+            {
+                "vNetName":  "vnet-general-euw-stg",
+                "vNetRG":  "rg-rahman-euw-stg",
+                "vNetLocation":  "WestEurope",
+                "NetworkType":  "Spoke",
+                "vNetAddressSpace":  "11.0.0.0/16",
+                "subnets":  [
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-wabe-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.1.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-wafe-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.2.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-agw-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.3.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+                                            ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-sql-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.4.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-vm-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.5.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-storage-euw-stg",
+                                    "SubnetAddressSpace":  "11.0.6.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                }
+                            ]
+            },
+            {
+                "vNetName":  "vnet-general-euw-sit",
+                "vNetLocation":  "WestEurope",
+                "NetworkType":  "Spoke",
+                "vNetAddressSpace":  "11.1.0.0/24",
+                "subnets":  [
+                                {
+                                    "vNetName":  "vnet-general-euw-sit",
+                                    "subnetName":  "snet-wabe-euw-stg",
+                                    "SubnetAddressSpace":  "11.1.1.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-sit",
+                                    "subnetName":  "snet-wafe-euw-sit",
+                                    "SubnetAddressSpace":  "11.1.2.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-stg",
+                                    "subnetName":  "snet-agw-euw-sit",
+                                    "SubnetAddressSpace":  "11.1.3.128/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-sit",
+                                    "subnetName":  "snet-sql-euw-sit",
+                                    "SubnetAddressSpace":  "11.1.4.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-sit",
+                                    "subnetName":  "snet-vm-euw-sit",
+                                    "SubnetAddressSpace":  "11.1.5.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                },
+                                {
+                                    "vNetName":  "vnet-general-euw-sit",
+                                    "subnetName":  "snet-storage-euw-sit",
+                                    "SubnetAddressSpace":  "11.1.6.0/25",
+                                    "serviceEndpoints":  [
+
+                                                        ],
+                                    "securityRules":  [
+
+                                                        ],
+                                    "routes":  [
+
+                                                ]
+                                }
+
+                            ]
+            }
+        ]
+},
+"subnetArray":  {
+"value":  [
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-wabe-euw-stg",
+            "SubnetAddressSpace":  "11.0.1.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-wafe-euw-stg",
+            "SubnetAddressSpace":  "11.0.2.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-agw-euw-stg",
+            "SubnetAddressSpace":  "11.0.3.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-sql-euw-stg",
+            "SubnetAddressSpace":  "11.0.4.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-vm-euw-stg",
+            "SubnetAddressSpace":  "11.0.5.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-stg",
+            "subnetName":  "snet-storage-euw-stg",
+            "SubnetAddressSpace":  "11.0.6.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-wabe-euw-sit",
+            "SubnetAddressSpace":  "11.1.1.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-wafe-euw-sit",
+            "SubnetAddressSpace":  "11.1.2.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-agw-euw-sit",
+            "SubnetAddressSpace":  "11.1.3.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-sql-euw-sit",
+            "SubnetAddressSpace":  "11.1.4.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-vm-euw-sit",
+            "SubnetAddressSpace":  "11.1.5.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        },
+        {
+            "vNetName":  "vnet-general-euw-sit",
+            "subnetName":  "snet-storage-euw-sit",
+            "SubnetAddressSpace":  "11.1.6.0/25",
+            "serviceEndpoints":  [
+
+                                ],
+            "securityRules":  [
+
+                            ],
+            "routes":  [
+
+                    ]
+        }
+
+
+
+
+    ]
+}
+}
+}
