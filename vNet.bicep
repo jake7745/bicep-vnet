@@ -134,20 +134,23 @@ module OtherSubnets 'modules/subnet-both.bicep' = [for (subnet, i) in subnetArra
 }]
 
 // Add subnet delegation
-
 @batchSize(1)
 module AddDelegation 'modules/add-delegation.bicep' = [for (subnet, i) in subnetArray: if (!contains(specialSubnet, subnet.subnetName)) {
-  name: 'delegation-${subnet.vNetName}-${subnet.subnetName}-${i}'
-  params: {
-    rgVnet: resourceGroup().name
-    vNetName: subnet.vNetName
-    subnetName: subnet.subnetName
-    subnetAddressPrefix: subnet.SubnetAddressSpace
-    serviceDelegation: []
-  }
-  dependsOn: [
-    BstFwSubnets
-    OtherRouteTable
-    OtherNSGTable
-  ]
-}]
+    name: 'delegation-${subnet.vNetName}-${subnet.subnetName}-${i}'
+    params: {
+      rgVnet: resourceGroup().name
+      vNetName: subnet.vNetName
+      subnetName: subnet.subnetName
+      subnetAddressPrefix: subnet.SubnetAddressSpace
+      serviceDelegation: []
+    }
+    dependsOn: [
+      BstFwSubnets
+      OtherRouteTable
+      OtherNSGTable
+      OtherSubnets      
+      vnet
+    ]
+  }]
+
+  
